@@ -686,7 +686,7 @@ const FormBuilder = function(opts, element) {
     }
 
     textAttrs = Object.assign({}, attrs, textAttrs)
-    let textInput = `<textarea ${utils.attrString(textAttrs)}></textarea>`
+    let textInput = `<textarea rows="4" ${utils.attrString(textAttrs)}></textarea>`
     let inputWrap = `<div class="input-wrap">${textInput}</div>`
     return `<div class="form-group ${name}-wrap">${label}${inputWrap}</div>`
   }
