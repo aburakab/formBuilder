@@ -1,5 +1,6 @@
 # Changelog
 
+- v2.11.0 - v2.10.0
 - v2.10.0 - v2.9.8
 - v2.9.8 - hotfix(inputSets): control icon [#634](https://github.com/kevinchappell/formBuilder/pull/634)
 - v2.9.7 - Merge branch 'hotfix/2.9.7'

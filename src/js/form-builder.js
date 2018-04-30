@@ -622,7 +622,7 @@ const FormBuilder = function(opts, element) {
         if (tUA.options) {
           advField.push(selectUserAttrs(attribute, tUA));
         } else {
-          if(tUA.multiline === true) {
+          if(tUA.multiline) {
             advField.push(textareaUserAttrs(attribute, tUA));
           }
           else {
