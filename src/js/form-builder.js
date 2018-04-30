@@ -676,13 +676,14 @@ const FormBuilder = function(opts, element) {
       id: name + '-' + data.lastID,
       title: attrs.description || attrs.label || name.toUpperCase(),
       name: name,
+      type: attrs.type || 'text',
       className: [`fld-${name}`],
     }
     let label = `<label for="${textAttrs.id}">${i18n[name]}</label>`
 
     let optionInputs = ['checkbox', 'checkbox-group', 'radio-group']
     if (!utils.inArray(textAttrs.type, optionInputs)) {
-      textAttrs.className.push('form-control')
+      textAttrs.className.push('form-control');
     }
 
     textAttrs = Object.assign({}, attrs, textAttrs)
