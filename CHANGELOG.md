@@ -1,5 +1,6 @@
 # Changelog
 
+- v2.12.2 - v2.12.1
 - v2.12.1 - Make Text Area option 4 lines
 - v2.12.0 - v2.11.0
 - v2.11.0 - v2.10.0
