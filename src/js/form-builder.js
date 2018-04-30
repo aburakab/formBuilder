@@ -620,9 +620,14 @@ const FormBuilder = function(opts, element) {
         }
 
         if (tUA.options) {
-          advField.push(selectUserAttrs(attribute, tUA))
+          advField.push(selectUserAttrs(attribute, tUA));
         } else {
-          advField.push(inputUserAttrs(attribute, tUA))
+          if(tUA.multiline === true) {
+            advField.push(textareaUserAttrs(attribute, tUA));
+          }
+          else {
+            advField.push(inputUserAttrs(attribute, tUA));
+          }
         }
 
         i18n[attribute] = orig
@@ -656,6 +661,32 @@ const FormBuilder = function(opts, element) {
 
     textAttrs = Object.assign({}, attrs, textAttrs)
     let textInput = `<input ${utils.attrString(textAttrs)}>`
+    let inputWrap = `<div class="input-wrap">${textInput}</div>`
+    return `<div class="form-group ${name}-wrap">${label}${inputWrap}</div>`
+  }
+
+  /**
+   * Text input value for attribute
+   * @param  {String} name
+   * @param  {Object} attrs also known as values
+   * @return {String}       input markup
+   */
+  function textareaUserAttrs(name, attrs) {
+    let textAttrs = {
+      id: name + '-' + data.lastID,
+      title: attrs.description || attrs.label || name.toUpperCase(),
+      name: name,
+      className: [`fld-${name}`],
+    }
+    let label = `<label for="${textAttrs.id}">${i18n[name]}</label>`
+
+    let optionInputs = ['checkbox', 'checkbox-group', 'radio-group']
+    if (!utils.inArray(textAttrs.type, optionInputs)) {
+      textAttrs.className.push('form-control')
+    }
+
+    textAttrs = Object.assign({}, attrs, textAttrs)
+    let textInput = `<textarea ${utils.attrString(textAttrs)} />`
     let inputWrap = `<div class="input-wrap">${textInput}</div>`
     return `<div class="form-group ${name}-wrap">${label}${inputWrap}</div>`
   }
