@@ -1123,7 +1123,7 @@ const FormBuilder = function(opts, element) {
     e.preventDefault()
     let options = field.querySelector('.sortable-options')
     let optionsCount = options.childNodes.length
-    if (optionsCount <= 2 && !type.includes('checkbox')) {
+    if (optionsCount <= 1 && !type.includes('checkbox')) {
       opts.notify.error('Error: ' + i18n.minOptionMessage)
     } else {
       $option.slideUp('250', () => {

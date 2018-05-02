@@ -1,4 +1,5 @@
 import control from '../control';
+import mi18n from 'mi18n';
 
 /**
  * Text input class
@@ -128,7 +129,7 @@ export default class controlSelect extends control {
         };
         let primaryInput = this.markup('input', null, optionAttrs);
         let otherInputs = [
-          document.createTextNode('Other'),
+          document.createTextNode(mi18n.current.other),
           this.markup('input', null, otherValAttrs)
         ];
         let inputLabel = this.markup('label', otherInputs, {for: optionAttrs.id});
