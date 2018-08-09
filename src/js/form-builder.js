@@ -148,7 +148,7 @@ const FormBuilder = function(opts, element) {
     connectWith: $stage,
     cancel: '.fb-separator',
     cursor: 'move',
-    scroll: false,
+    scroll: true,
     placeholder: 'ui-state-highlight',
     start: (evt, ui) => h.startMoving.call(h, evt, ui),
     stop: (evt, ui) => h.stopMoving.call(h, evt, ui),
